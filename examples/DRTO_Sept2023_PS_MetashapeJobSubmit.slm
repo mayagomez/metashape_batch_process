@@ -1,0 +1,164 @@
+#!/bin/bash
+
+#SBATCH --partition=meb_largemem
+#SBATCH --nodelist=b01-11
+#SBATCH --account=ckenkel_26
+#SBATCH --time=200:00:00
+#SBATCH --mem=0
+#SBATCH --exclusive
+#SBATCH --mail-type=END
+#SBATCH --mail-user=migomez@usc.edu
+#SBATCH --error=%x_%j.err
+#SBATCH --output=%x_%j.out
+
+module purge
+module load gcc/8.3.0 mesa/18.3.6 mesa-glu/9.0.0
+python -V
+
+# To run a single model, simply replace replaceme.py with the python script of choice (with proper file paths).
+    # bash metashape.sh -r replaceme.py -platform offscreen
+# Example for how to store call scripts that are stored within the ToRun directory.
+    # bash metashape.sh -r ToRun/ORCC_October2022/101422_Looe_Array10.py -platform offscreen
+
+# NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
+    # $ squeue -w b01-11  (or squeue -p meb_largemem)
+
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y121.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y122.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y123.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y124.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y125.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y126.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y127-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y128.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y144.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y146.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y147.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y149.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y150.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y151.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y152.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y73-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y74.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y75.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y76.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y77-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y78.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y79-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y80.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y105.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y106.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y107-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y108.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y109.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y111-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y112.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y130-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y131.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y132.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y134.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y135.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y136.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y153.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y154.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y155.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y156-BROKEN.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y157.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y159.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y160.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y161.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y162.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y163.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y164.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y165.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y167.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y168.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y173.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y174-NM.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y175-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y176.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y1.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y2.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y33.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y34.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y35.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y36-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y37.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y38-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y39.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y3.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y40-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y4.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y57.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y58.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y59.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y5.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y60.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y61-RM.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y62.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y63.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y64.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y6.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y7.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y81.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y82.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y83.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y84.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y85.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y86.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y87.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y8.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y113.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y114-BL-BROKEN.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y115.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y116.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y117.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y118.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y119.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y137.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y25.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y26.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y47-NM-BROKEN.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y65.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y66.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y67.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y68.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y69-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y70.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y71.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y72.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y89-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y90.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y91-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y92.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3E_MG_Y93-NM-PossiblyIncompletePhotoset.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y100.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y101.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y102.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y103.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y104.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y10.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y11-NM.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y12.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y13.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y16.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y49-NM.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y98-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_HW_Y99-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y14.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y169.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y170.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y171.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y195.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y41.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y42.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y43-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y44-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y45.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y46.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y47-NM.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y48-BL.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y51.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y54.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y55.py -platform offscreen
+bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_2A/090923_PS_2A_SM_Y56.py -platform offscreen
