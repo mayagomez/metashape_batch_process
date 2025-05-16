@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#SBATCH --partition=meb_largemem
+#SBATCH --nodelist=b01-11
+#SBATCH --account=ckenkel_26
+#SBATCH --time=72:00:00
+#SBATCH --mem=0
+#SBATCH --exclusive
+#SBATCH --mail-type=END
+#SBATCH --mail-user=migomez@usc.edu
+#SBATCH --error=%x_%j.err
+#SBATCH --output=%x_%j.out
+
+module purge
+module load gcc/8.3.0 mesa/18.3.6 mesa-glu/9.0.0
+python -V
+
+# To run a single model, simply replace replaceme.py with the python script of choice (with proper file paths).
+    # bash metashape.sh -r replaceme.py -platform offscreen
+# Example for how to store call scripts that are stored within the ToRun directory.
+    # bash metashape.sh -r ToRun/ORCC_October2022/101422_Looe_Array10.py -platform offscreen
+
+# NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
+    # $ squeue -w b01-11  (or squeue -p meb_largemem)
+
+
+#### NEW SINCE THE UPDATE:
+
+#module load apptainer
+#unset LD_PRELOAD 
+
+#apptainer exec -B/apps -B/spack /apps/containers/centos7/centos7-lmod.sif bash metashape.sh ...
