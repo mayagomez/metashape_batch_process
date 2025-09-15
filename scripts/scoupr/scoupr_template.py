@@ -40,11 +40,11 @@ import math
 ## Set file paths:
 # If running this on the HPC (batch model processing), then include the following 3 lines:
 #source_images = "PHOTOSET"
-#output = "/scratch1/migomez/3Dmodels/models/ORCC_April2023/Adjustables/2B/"
+#output = "/scratch1/migomez/3Dmodels/models/ORCC_April2023/scoupr/2B/"
 ##output = "/scratch1/migomez/3Dmodels/models/CalcExpt_May2023/Rack/"
 #scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/scoupr_2A_011623.txt"
 ##scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/RackScale_011723.txt"
-##source_images = "/scratch1/migomez/3Dmodels/source_images/ORCC_January2023/Adjustables/Adjustable1A_Maya/011723_DavesLedge_Tag182"  # Or include this for single model processing via HPC and change to the desired photoset
+##source_images = "/scratch1/migomez/3Dmodels/source_images/ORCC_January2023/scoupr/scoupr_1A_Maya/011723_DavesLedge_Tag182"  # Or include this for single model processing via HPC and change to the desired photoset
 
 # If this works, then can delete the above chunk
 ## Set file paths:
