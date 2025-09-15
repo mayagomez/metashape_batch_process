@@ -43,8 +43,8 @@ source_images = "PHOTOSET"
 # Set output filepath based on the 5th element in the source_images filepath
 array=source_images.split('/')
 timepoint=array[5]
-output="/scratch1/avinton/3Dmodels/models/{}/Adjustables/".format(timepoint)
-#output = "/scratch1/migomez/3Dmodels/models/DRTO_June2023/Adjustables/"
+output="/scratch1/avinton/3Dmodels/models/{}/scoupr/".format(timepoint)
+#output = "/scratch1/migomez/3Dmodels/models/DRTO_June2023/scoupr/"
 
 
 
