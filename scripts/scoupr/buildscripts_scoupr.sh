@@ -15,14 +15,14 @@
 # Set file paths & constants: 
 TIMEPOINT=$1
 TEMPLATE=adjustables_template_JD.py	# Option to change this to the template script of your choosing.
-ADJUSTABLE=$2
-DIR=/scratch1/migomez/3Dmodels/source_images/$TIMEPOINT/Adjustables/$ADJUSTABLE	# Option to change this location. All you should need to do is change migomez to your username.
+SCOUPR=$2
+DIR=/scratch1/migomez/3Dmodels/source_images/$TIMEPOINT/scoupr/$SCOUPR	# Option to change this location. All you should need to do is change migomez to your username.
 
 # Create an output directory based on the timepoint directory name and save all subsequent outputs here. 
 #mkdir /project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT		# Option to change this location.
-#mkdir /project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT/Adjustables          # Option to change this location.
-mkdir /project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT/Adjustables/$ADJUSTABLE          # Option to change this location.
-OUT=/project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT/Adjustables/$ADJUSTABLE     	# Option to change this location.
+#mkdir /project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT/scoupr          # Option to change this location.
+mkdir /project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT/scoupr/$SCOUPR          # Option to change this location.
+OUT=/project/ckenkel_26/software/metashape-pro/ToRun/$TIMEPOINT/scoupr/$SCOUPR     	# Option to change this location.
 
 
 # If TIMEPOINT or MODELTYPE is not provided when ./buildscripts.sh is run, then exit and output the following text:
@@ -33,7 +33,7 @@ if [ "$#" -ne 2 ]
         echo "Usage: ./buildscripts.sh TIMEPOINT MODELTYPE"
         echo "Where"
         echo "  TIMEPOINT: directory that holds photosets from a specific timepoint for batch processing"
-        echo "  ADJUSTABLE: Adjustable1A_Maya  Adjustable1B_Erich  Adjustable2A_Joe  Adjustable2B_Ian"
+        echo "  SCOUPR: scoupr1A_Maya  scoupr1B_Erich  scoupr2A_Joe  scoupr2B_Ian"
         echo "For example: ./buildscripts.sh ORCC_October2022 Rack'"
         echo ""
         exit
@@ -77,13 +77,13 @@ chmod +x $OUT/*.py
 
 
 # Create a list of the full command that calls each unique python script so that they can be run one after another in a slurm script. Save as ToDo.txt
-for i in `ls ToRun/$TIMEPOINT/Adjustables/$ADJUSTABLE/*.py`; do		# This could also be done as follows: for i in `cat $OUT/listofscripts.txt`; do 
+for i in `ls ToRun/$TIMEPOINT/scoupr/$SCOUPR/*.py`; do		# This could also be done as follows: for i in `cat $OUT/listofscripts.txt`; do 
     echo bash metashape.sh -r $i -platform offscreen >> $OUT/ToDo.txt; 
 done
 
 
 # Finally, append ToDo.txt to the template Metashape job submission script (template_MetashapeJobSubmit.slm) and make it executable.
-cat template_MetashapeJobSubmit.slm $OUT/ToDo.txt > ${TIMEPOINT}_${ADJUSTABLE}_MetashapeJobSubmit.slm
-chmod +x ${TIMEPOINT}_${ADJUSTABLE}_MetashapeJobSubmit.slm
+cat template_MetashapeJobSubmit.slm $OUT/ToDo.txt > ${TIMEPOINT}_${SCOUPR}_MetashapeJobSubmit.slm
+chmod +x ${TIMEPOINT}_${SCOUPR}_MetashapeJobSubmit.slm
 
 
