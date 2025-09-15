@@ -59,9 +59,9 @@ import math
 ## Set file paths:
 # If running this on the HPC (batch model processing), then include the following 3 lines:
 #source_images = "PHOTOSET"
-output = "/scratch1/migomez/3Dmodels/models/ORCC_January2023/Adjustables/"
-SCALEBARS = "/project/ckenkel_26/software/metashape-pro/Scales/Adjustable1AScale_011623.txt"
-source_images = "/scratch1/migomez/3Dmodels/source_images/ORCC_January2023/Adjustables/Adjustable1A_Maya/011723_DavesLedge_Tag182"  # Or include this for single model processing via HPC and change to the desired photoset
+output = "/scratch1/migomez/3Dmodels/models/ORCC_January2023/scoupr/"
+SCALEBARS = "/project/ckenkel_26/software/metashape-pro/Scales/scoupr_1A_011623.txt"
+source_images = "/scratch1/migomez/3Dmodels/source_images/ORCC_January2023/scoupr/scoupr_1A_Maya/011723_DavesLedge_Tag182"  # Or include this for single model processing via HPC and change to the desired photoset
 
 # If running this on MY computer (single model processing), then include the following 3 lines and change the first based on the desired photoset:
 #source_images = "/Users/migomez/Documents/USC/3DModels/source_images/ORCC_October2022/101522_DavesLedge_Array12"
