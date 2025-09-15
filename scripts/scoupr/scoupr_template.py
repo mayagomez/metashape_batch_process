@@ -42,7 +42,7 @@ import math
 #source_images = "PHOTOSET"
 #output = "/scratch1/migomez/3Dmodels/models/ORCC_April2023/Adjustables/2B/"
 ##output = "/scratch1/migomez/3Dmodels/models/CalcExpt_May2023/Rack/"
-#scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/Adjustable2AScale_011623.txt"
+#scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/scoupr_2A_011623.txt"
 ##scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/RackScale_011723.txt"
 ##source_images = "/scratch1/migomez/3Dmodels/source_images/ORCC_January2023/Adjustables/Adjustable1A_Maya/011723_DavesLedge_Tag182"  # Or include this for single model processing via HPC and change to the desired photoset
 
@@ -54,16 +54,16 @@ source_images = "PHOTOSET"
 # Set output filepath based on the 5th element in the source_images filepath
 array=source_images.split('/')
 timepoint=array[5]
-output="/scratch1/migomez/3Dmodels/models/{}/Adjustables/".format(timepoint)
-#output = "/scratch1/migomez/3Dmodels/models/DRTO_June2023/Adjustables/"
+output="/scratch1/migomez/3Dmodels/models/{}/scoupr/".format(timepoint)
+#output = "/scratch1/migomez/3Dmodels/models/DRTO_June2023/scoupr/"
 
-scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/Adjustable3Scale_BARSTICKERS_060123.txt"    # THIS IS THE ONLY THING YOU NEED TO CHANGE
+scalebars_path = "/project/ckenkel_26/software/metashape-pro/Scales/scoupr_3_BARSTICKERS_060123.txt"    # THIS IS THE ONLY THING YOU NEED TO CHANGE
 
 
 # Other options:
-#Adjustable1AScale_011623.txt  Adjustable2AScale_011623.txt             MoteScaleBars.txt      RackCoords_101422_OLD.txt  RackScale_012423.txt
-#Adjustable1BScale_011623.txt  Adjustable2BScale_011623.txt             RackCoords_011723.txt  RackCoords_101422.txt      RackScale_101422.txt
-#Adjustable1BScale_041823.txt  Adjustable3Scale_BARSTICKERS_060123.txt  RackCoords_012423.txt  RackScale_011723.txt
+#scoupr_1A_011623.txt  		scoupr_2A_011623.txt             MoteScaleBars.txt      RackCoords_101422_OLD.txt  RackScale_012423.txt
+#scoupr_1BScale_011623.txt  scoupr_2B_011623.txt             RackCoords_011723.txt  RackCoords_101422.txt      RackScale_101422.txt
+#scoupr_1BScale_041823.txt  scoupr_3_BARSTICKERS_060123.txt  RackCoords_012423.txt  RackScale_011723.txt
 
 #RackCoords = "/project/ckenkel_26/software/metashape-pro/Scales/RackCoords_011723.txt"
 #RackScale = "/project/ckenkel_26/software/metashape-pro/Scales/RackScale_011723.txt"
