@@ -51,10 +51,9 @@ scalebars_path = "/project2/ckenkel_26/software/metashape-pro/Scales/FragramScal
 FragramCoords = "/project2/ckenkel_26/software/metashape-pro/Scales/FragramCoords_050625.txt"
 
 # Other options:
-#Adjustable1AScale_011623.txt  Adjustable2AScale_011623.txt             MoteScaleBars.txt      RackCoords_101422_OLD.txt  RackScale_012423.txt
-#Adjustable1BScale_011623.txt  Adjustable2BScale_011623.txt             RackCoords_011723.txt  RackCoords_101422.txt      RackScale_101422.txt
-#Adjustable1BScale_041823.txt  Adjustable3Scale_BARSTICKERS_060123.txt  RackCoords_012423.txt  RackScale_011723.txt
-
+#scoupr_1A_011623.txt  		scoupr_2A_011623.txt             MoteScaleBars.txt      RackCoords_101422_OLD.txt  RackScale_012423.txt
+#scoupr_1BScale_011623.txt  scoupr_2B_011623.txt             RackCoords_011723.txt  RackCoords_101422.txt      RackScale_101422.txt
+#scoupr_1BScale_041823.txt  scoupr_3_BARSTICKERS_060123.txt  RackCoords_012423.txt  RackScale_011723.txt
 
 ## Set constants:
 doc = Metashape.app.document
