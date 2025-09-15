@@ -14,13 +14,3 @@
 source ~/.bashrc
 setup_env_221
 deactivate_metashape
-
-
-
-# partition=meb_largemem
-# nodelist=b01-11
-
-# partition=gpu
-# nodelist=d14-[07-08]
-
-
