@@ -22,11 +22,3 @@ python -V
 
 # NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
     # $ squeue -w b01-11  (or squeue -p meb_largemem)
-
-
-#### NEW SINCE THE UPDATE:
-
-#module load apptainer
-#unset LD_PRELOAD 
-
-#apptainer exec -B/apps -B/spack /apps/containers/centos7/centos7-lmod.sif bash metashape.sh ...
