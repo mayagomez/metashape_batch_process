@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH --partition=meb_largemem
+#SBATCH --nodelist=b01-11
+#SBATCH --ntasks=1
+#SBATCH --account=ckenkel_26
+#SBATCH --time=00:05:00
+#SBATCH --mail-type=END
+#SBATCH --mail-user=migomez@usc.edu
+#SBATCH --error=%x_%j.err
+#SBATCH --output=%x_%j.out
+
+
+source ~/.bashrc
+setup_env_221
+deactivate_metashape
+
+
+
+# partition=meb_largemem
+# nodelist=b01-11
+
+# partition=gpu
+# nodelist=d14-[07-08]
+
+
