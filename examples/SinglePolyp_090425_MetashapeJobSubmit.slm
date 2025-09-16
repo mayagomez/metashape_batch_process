@@ -1,0 +1,96 @@
+#!/bin/bash
+
+#SBATCH --partition=meb_largemem
+#SBATCH --nodelist=b01-11
+#SBATCH --account=ckenkel_26
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=64
+#SBATCH --mem=0
+#SBATCH --exclusive
+#SBATCH --mail-type=END
+#SBATCH --mail-user=migomez@usc.edu
+#SBATCH --error=%x_%j.err
+#SBATCH --output=%x_%j.out
+
+
+# To run a single model, simply replace replaceme.py with the python script of choice (with proper file paths).
+    # bash metashape.sh -r replaceme.py -platform offscreen
+# Example for how to store call scripts that are stored within the ToRun directory.
+    # bash metashape.sh -r ToRun/ORCC_October2022/101422_Looe_Array10.py -platform offscreen
+
+# NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
+    # $ squeue -w b01-11  (or squeue -p meb_largemem)
+
+source ~/.bashrc
+#setup_env_183
+setup_env_221
+activate_metashape
+
+#reactivae_metashape
+
+export OMP_NUM_THREADS=$(nproc)
+
+
+
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-E-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-E-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-E-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-F-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-F-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-F-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-G-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-G-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-G-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-H-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-H-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-H-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-O-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-O-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_31-O-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-E-B-2.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-E-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-E-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-E-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-F-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-F-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-F-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-G-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-G-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-G-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-H-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-H-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-H-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-O-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-O-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_3-O-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-E-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-E-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-E-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-F-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-F-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-F-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-G-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-G-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-G-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-H-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-H-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-H-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-O-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-O-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_41-O-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-E-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-E-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-E-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-F-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-F-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-F-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-G-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-G-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-G-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-H-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-H-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-H-S.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-O-B.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-O-L.py -platform offscreen
+bash metashape.sh -r ToRun/SinglePolyp/090425/090425_62-O-S.py -platform offscreen
