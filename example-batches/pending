@@ -1,0 +1,101 @@
+#!/bin/bash
+
+#SBATCH --partition=meb_largemem
+#SBATCH --nodelist=b01-11
+#SBATCH --account=ckenkel_26
+#SBATCH --time=200:00:00
+#SBATCH --mem=0
+#SBATCH --exclusive
+#SBATCH --mail-type=END
+#SBATCH --mail-user=migomez@usc.edu
+#SBATCH --error=%x_%j.err
+#SBATCH --output=%x_%j.out
+
+module purge
+module load gcc/8.3.0 mesa/18.3.6 mesa-glu/9.0.0
+python -V
+
+# To run a single model, simply replace replaceme.py with the python script of choice (with proper file paths).
+    # bash metashape.sh -r replaceme.py -platform offscreen
+# Example for how to store call scripts that are stored within the ToRun directory.
+    # bash metashape.sh -r ToRun/ORCC_October2022/101422_Looe_Array10.py -platform offscreen
+
+# NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
+    # $ squeue -w b01-11  (or squeue -p meb_largemem)
+
+
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag101
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag102
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag103
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag104
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag106
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag107
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag108
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag109
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag111
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag112
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag113
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag114
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag115
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag116
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag117
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag118
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag120
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag121
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag122
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag123
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag124
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_DavesLedge_Tag125
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag01
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag03
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag04
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag05
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag06
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag07
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag08
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag09
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag10
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag11
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag12
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag13
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag14
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag15
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag16
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag17
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag18
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag19
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag20
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag21
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag23
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag24
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag25
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag26
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag27
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag28
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag29
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/041823_Looe_Tag30
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag111
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag112
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag113
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag114
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag115
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag116
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag156
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag157
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag166
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag167
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag168
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag169
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag170
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag177
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_DavesLedge_Tag188
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag21
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag23
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag24
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag25
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag26
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag27
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag28
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag29
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/042023_Looe_Tag30
+/scratch1/migomez/3Dmodels/source_images/ORCC_April2023/Adjustables/1A/DONOTBUILD
