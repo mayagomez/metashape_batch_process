@@ -5,3 +5,5 @@ This high throughput, fully automated photogrammetry processing pipeline utilize
 This workflow is utilized by the Cnidarian Evolutionary Ecology Lab at USC for the construction of 3D models of individual Acropora cervicornis coral outplants (in-water photogrammetry) as well as corals grown on plugs in aquaria systems (in-air photogrammetry). Time series photosets unlock the tracking of key morpholgocial and growth related traits, such linear extension, volume, surface area, convexity, and interstitial space, with greater accuracy and precision than traditional by hand methods.
 
 Scripts tested in Metashape 1.8.3 and/or 2.2.1 (see script for specifications).
+
+Please see https://www.protocols.io/view/image-capture-for-3d-photogrammetry-of-coral-colon-c9qkz5uw?step=2.1 for image capture details.
