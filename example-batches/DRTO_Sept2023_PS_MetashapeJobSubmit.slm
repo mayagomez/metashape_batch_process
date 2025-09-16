@@ -23,29 +23,7 @@ python -V
 # NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
     # $ squeue -w b01-11  (or squeue -p meb_largemem)
 
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y121.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y122.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y123.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y124.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y125.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y126.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y127-BL.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y128.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y144.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y146.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y147.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y149.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y150.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y151.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y152.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y73-BL.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y74.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y75.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y76.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y77-BL.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y78.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y79-BL.py -platform offscreen
-bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3B_Phil_Y80.py -platform offscreen
+
 bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y105.py -platform offscreen
 bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y106.py -platform offscreen
 bash metashape.sh -r ToRun/DRTO_Sept2023/Adjustables/PS_3s/090923_PS_3D_AW_Y107-BL.py -platform offscreen
