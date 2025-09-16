@@ -8,4 +8,7 @@ Models are scaled using unique Agisoft Metashape markers spaced at known distanc
 
 Scripts written for Metashape 1.8.3 or 2.2.1. See scripts for version specifications.
 
+v2 release by Maya Gomez: migomez@usc.edu
+v1 release by Wyatt Million: https://github.com/wyattmillion/Coral3DPhotogram
+
 NOTE: SCOUPRs are formally known as Adjustables. If you see the word "Adjustable" in any script, it can be replaced with scoupr.
