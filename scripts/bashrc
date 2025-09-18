@@ -7,32 +7,10 @@ fi
 
 
 # User specific aliases and functions
-alias cdo='cd /project/ckenkel_26/migomez'
 alias cdw='cd /project2/ckenkel_26/migomez'
 alias cdh='cd /home1/migomez'
 alias cds='cd /scratch1/migomez'
-alias cdm='cd /project/ckenkel_26/software/metashape-pro'
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/spack/conda/miniconda3/4.12.0/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/spack/conda/miniconda3/4.12.0/etc/profile.d/conda.sh" ]; then
-        . "/spack/conda/miniconda3/4.12.0/etc/profile.d/conda.sh"
-    else
-        export PATH="/spack/conda/miniconda3/4.12.0/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/spack/conda/miniconda3/4.12.0/etc/profile.d/mamba.sh" ]; then
-    . "/spack/conda/miniconda3/4.12.0/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-
+alias cdm='cd /project2/ckenkel_26/software/metashape-pro'
 
 
 setup_env_183()
