@@ -15,7 +15,8 @@ alias cdm='cd /project2/ckenkel_26/software/metashape-pro'
 
 setup_env_183()
 {
-        export METASHAPE_ROOT=/scratch1/migomez/metashape-pro_1_8_3
+        #export METASHAPE_ROOT=/scratch1/migomez/metashape-pro_1_8_3
+        export METASHAPE_ROOT=/project2/ckenkel_26/software/metashape-pro_1_8_3
 
         module purge
         module load legacy/CentOS7 gcc/8.3.0
@@ -33,7 +34,8 @@ setup_env_183()
 setup_env_221()
 {
         #export METASHAPE_ROOT=/project2/ckenkel_26/NEWFILES/metashape-pro_2_2_1
-        export METASHAPE_ROOT=/scratch1/migomez/metashape-pro_2_2_1
+        #export METASHAPE_ROOT=/scratch1/migomez/metashape-pro_2_2_1
+        export METASHAPE_ROOT=/project2/ckenkel_26/software/metashape-pro_2_2_1
 
         module purge
         module load legacy/CentOS7 gcc/8.3.0
