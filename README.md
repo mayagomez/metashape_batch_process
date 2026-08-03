@@ -10,7 +10,7 @@ The scripts utilized for batch processing 3D models varies slightly by the image
 
 2. Fragrammeter: automatically captured images of corals captures with the custom built Fragrammeter imaging station (in-air). Corals are positioned within a custom 3D printed holder with Metashape targets, which allows for scaling and the construction of a local coordinate system for model alignment across sequential timepoints. Please see https://www.protocols.io/edit/the-fragrammeter-an-open-source-instrument-to-phot-g8qebzvtf for details on the Fragrammeter.
    
-3. Rack: manually captured images of up to 10 corals held within a custom rack to increase throughput (in-water and in-air). This method relies on the ability for coral fragments to be physically moved and secured in the rack holders.
+3. Rack: manually captured images of up to 10 corals held within a custom rack to increase throughput (in-water and in-air). This method relies on the ability for coral fragments to be physically moved and secured in the rack holders. Method used for CalcExpt.
 
 
 Scripts written for Metashape 1.8.3 or 2.2.1. See scripts for version specifications.
