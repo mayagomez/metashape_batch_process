@@ -13,6 +13,7 @@ The scripts utilized for batch processing 3D models varies slightly by the image
 3. Rack: manually captured images of up to 10 corals held within a custom rack to increase throughput (in-water and in-air). This method relies on the ability for coral fragments to be physically moved and secured in the rack holders. Method used for CalcExpt.
 
 
-Scripts written for Metashape 1.8.3 or 2.2.1. See scripts for version specifications.
+Scripts were originally written and tested on Metashape 1.8.3 and 2.2.1, however 2.2.1 scripts should work for 2.0+.
 
-v2 release by Maya Gomez: migomez@usc.edu // v1 release by Wyatt Million: https://github.com/wyattmillion/Coral3DPhotogram
+v2 batch processing release by Maya Gomez (migomez@usc.edu)
+v1 release by Wyatt Million: https://github.com/wyattmillion/Coral3DPhotogram
