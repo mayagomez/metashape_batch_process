@@ -24,5 +24,5 @@ Regardless of the precise image capture method, the batch processing pipeline re
 
 Please see https://www.protocols.io/edit/batch-processing-scaled-3d-models-using-agisoft-me-haiwb2cff for support in running the batch processing scripts on an HPC.
 
-**v2** batch processing release by Maya Gomez (migomez@usc.edu)
+**v2** batch processing release by Maya Gomez (migomez@usc.edu) <br>
 **v1** release by Wyatt Million: https://github.com/wyattmillion/Coral3DPhotogram
