@@ -5,6 +5,7 @@ This high throughput, fully automated photogrammetry processing pipeline utilize
 This workflow is utilized by the Cnidarian Evolutionary Ecology Lab at USC for the construction of 3D models of coral outplants (in-water photogrammetry) as well as corals grown on plugs in aquaria systems (in-air photogrammetry). Time series photosets unlock the tracking of key morphological and growth related traits, such linear extension, volume, surface area, convexity, and interstitial space, with greater accuracy and precision than traditional by hand methods.
 
 The template scripts utilized for batch processing 3D models varies slightly by the image capture method. All models are scaled according to the distances between unique Agisoft Metashape markers in the target region. Scripts were originally written and tested on Metashape 1.8.3 and 2.2.1, however 2.2.1 scripts should work for 2.0+. 
+<br>
 
 Image capture methods:
 
@@ -19,9 +20,9 @@ Regardless of the precise image capture method, the batch processing pipeline re
 - **XXX_template.py**: template python script for running Metashape on the command line
 - **buildscripts_XXX.sh**: bash commands which duplicate the template script, populate variables, serially replace the photoset name, and generate the final slurm script
 - **template_MetashapeJobSubmit.slm**: final script for job submission
-  
-Please see https://www.protocols.io/edit/batch-processing-scaled-3d-models-using-agisoft-me-haiwb2cff for support in running the batch processing scripts on an HPC.
+<br>
 
+Please see https://www.protocols.io/edit/batch-processing-scaled-3d-models-using-agisoft-me-haiwb2cff for support in running the batch processing scripts on an HPC.
 
 **v2** batch processing release by Maya Gomez (migomez@usc.edu)
 **v1** release by Wyatt Million: https://github.com/wyattmillion/Coral3DPhotogram
