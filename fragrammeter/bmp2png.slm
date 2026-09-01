@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#SBATCH --partition=meb_largemem
+#SBATCH --nodelist=b01-10
+#SBATCH --account=ckenkel_26
+#SBATCH --time=20:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=64
+#SBATCH --mem=0
+#SBATCH --exclusive
+#SBATCH --mail-type=END
+#SBATCH --mail-user=migomez@usc.edu
+#SBATCH --error=%x_%j.err
+#SBATCH --output=%x_%j.out
+
+module load imagemagick
+
+log_file="conversion_log.txt"
+echo "Starting BMP to PNG conversion..." | tee "$log_file"
+
+
+root_dir="$(pwd)"
+#root_dir="/scratch1/migomez/3Dmodels/source_images/SinglePolyp"
+export LOG_FILE="$log_file"
+
+mapfile -t folders < <(find "$root_dir" -type f -iname "*.bmp" -printf '%h\n' | sort -u)
+
+for folder in "${folders[@]}"; do
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting folder: $folder" | tee -a "$log_file"
+
+  mapfile -t bmp_files < <(find "$folder" -maxdepth 1 -type f -iname "*.bmp")
+  total=${#bmp_files[@]}
+  converted=0
+
+  # Export converted as a file to accumulate count across parallel jobs
+  tmpfile=$(mktemp)
+
+  printf '%s\n' "${bmp_files[@]}" | \
+    xargs -P 64 -I{} bash -c '
+      bmp="$1"
+      png="${bmp%.bmp}.png"
+      if [[ -f "$png" ]]; then
+        exit 0
+      fi
+      if magick "$bmp" "$png"; then
+        rm "$bmp"
+        echo 1 >> "$2"
+      else
+	echo "[$(date "+%Y-%m-%d %H:%M:%S")] Failed to convert: $bmp" | tee -a "$LOG_FILE"
+      fi
+    ' _ {} "$tmpfile"
+
+  # Sum how many converted successfully
+  converted=$(wc -l < "$tmpfile")
+  rm "$tmpfile"
+
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Converted $converted/$total photos in folder: $folder" | tee -a "$log_file"
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Finished folder: $folder" | tee -a "$log_file"
+done
+
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] ALL DONE" | tee -a "$log_file"
