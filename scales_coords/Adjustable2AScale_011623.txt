@@ -1,0 +1,4 @@
+target 15,target 21,0.1279,0.0005
+target 3,target 20,0.1248,0.0005
+target 7,target 18,0.1255,0.0005
+target 12,target 6,0.1275,0.0005
