@@ -16,7 +16,7 @@ Image capture methods:
 3. **Rack:** manually captured images of up to 10 corals held within a custom rack to increase throughput (in-water and in-air). This method relies on the ability for coral fragments to be physically moved and secured in the rack holders. Method used for CalcExpt.
 <br>
 
-Regardless of the precise image capture method, the batch processing pipeline requires the following three scripts, where the XXX is replaced with the name of the image capture method.
+Regardless of the precise image capture method, the batch processing pipeline requires the following three scripts, where the XXX is replaced with the name of the image capture method (ie. scoupr or fragram).
 - **XXX_template.py**: template python script for running Metashape on the command line
 - **buildscripts_XXX.sh**: bash commands which duplicate the template script, populate variables, serially replace the photoset name, and generate the final slurm script
 - **template_MetashapeJobSubmit.slm**: final script for job submission
