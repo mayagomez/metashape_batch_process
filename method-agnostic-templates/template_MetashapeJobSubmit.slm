@@ -4,16 +4,14 @@
 #SBATCH --nodelist=b01-11
 #SBATCH --account=ckenkel_26
 #SBATCH --time=72:00:00
-#SBATCH --mem=0
-#SBATCH --exclusive
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=64G
 #SBATCH --mail-type=END
 #SBATCH --mail-user=migomez@usc.edu
-#SBATCH --error=%x_%j.err
 #SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
 
-module purge
-module load gcc/8.3.0 mesa/18.3.6 mesa-glu/9.0.0
-python -V
 
 # To run a single model, simply replace replaceme.py with the python script of choice (with proper file paths).
     # bash metashape.sh -r replaceme.py -platform offscreen
@@ -22,3 +20,15 @@ python -V
 
 # NOTE: Before processing a model or set of models, I recommend checking to see if there is any traffic on the Endeavor node b01-11:
     # $ squeue -w b01-11  (or squeue -p meb_largemem)
+
+source ~/.bashrc
+#setup_env_183
+setup_env_221
+activate_metashape
+
+#reactivae_metashape
+
+export OMP_NUM_THREADS=$(nproc)
+
+
+
