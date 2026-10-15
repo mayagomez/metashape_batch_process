@@ -43,7 +43,7 @@ chunk = doc.chunk
 
 
 ## Set file paths:
-source_images = '/Volumes/Biggggg/AcroFLaT/ReciprocalTransplant/DRTO_REDOs/source_images/DRTO_REDO2/062923_SW_3D_FL_BL78'
+source_images = "/Volumes/Biggggg/AcroFLaT/ReciprocalTransplant/DRTO_June2023/DRTO_June2023_images/062823_PulaskiShoal/062823_PS_3C_blueZip_BC/062823_3C_BC_PS_Y102"
 project = "AcroFLaT" # replace this if changing projects!
 
 ## Set output filepath based on the 5th element in the source_images filepath
