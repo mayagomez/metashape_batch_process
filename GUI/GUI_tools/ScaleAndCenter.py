@@ -29,12 +29,13 @@ def accept_settings(QtWidgets, dialog, paths):
     dialog.accept()
 
 def scale_center_settings():
-    try: from PySide2 import QtWidgets
-    except ImportError: from PySide6 import QtWidgets
+    try: from PySide2 import QtWidgets, QtCore
+    except ImportError: from PySide6 import QtWidgets, QtCore
+    saved = QtCore.QSettings("USC-PIMS", "ScaleAndCenter")
     dialog = QtWidgets.QDialog(QtWidgets.QApplication.activeWindow()); dialog.setWindowTitle("Scale and Center"); dialog.setMinimumWidth(640); layout = QtWidgets.QGridLayout(dialog); fields = []; paths = []
-    for row, (label, default) in enumerate((("Scalebar", SCALEBARS_PATH), ("Coordinates", COORDINATES_PATH))):
+    for row, (label, default) in enumerate((("Scalebar", saved.value("scalebar_path", SCALEBARS_PATH, type=str)), ("Coordinates", saved.value("coordinates_path", COORDINATES_PATH, type=str)))):
         field = QtWidgets.QLineEdit(default); button = QtWidgets.QPushButton("Browse…"); button.clicked.connect(lambda checked=False, field=field, label=label: choose_file(QtWidgets, dialog, field, "Choose {} file".format(label.lower()))); layout.addWidget(QtWidgets.QLabel(label + " file"), row, 0); layout.addWidget(field, row, 1, 1, 3); layout.addWidget(button, row, 4); paths.append((label, field))
-    layout.addWidget(QtWidgets.QLabel("Bounding box: metres relative to the target coordinate system."), 2, 0, 1, 5)
+    layout.addWidget(QtWidgets.QLabel("Bounding box: meters relative to the target coordinate system."), 2, 0, 1, 5)
     for column, axis in enumerate(("X", "Y", "Z"), 1): layout.addWidget(QtWidgets.QLabel(axis), 3, column)
     for row, (label, defaults) in enumerate((("Center (m)", REGION_CENTER), ("Size (m)", REGION_SIZE)), 4):
         layout.addWidget(QtWidgets.QLabel(label), row, 0); group = []
@@ -44,7 +45,8 @@ def scale_center_settings():
     buttons = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | QtWidgets.QDialogButtonBox.Cancel); buttons.button(QtWidgets.QDialogButtonBox.Ok).setText("Apply"); buttons.accepted.connect(lambda: accept_settings(QtWidgets, dialog, paths)); buttons.rejected.connect(dialog.reject); layout.addWidget(buttons, 6, 0, 1, 5)
     execute = getattr(dialog, "exec", None) or dialog.exec_
     if execute() != QtWidgets.QDialog.Accepted: return None
-    return (paths[0][1].text().strip(), paths[1][1].text().strip(), *(tuple(field.value() for field in group) for group in fields))
+    scalebars = paths[0][1].text().strip(); coordinates = paths[1][1].text().strip(); saved.setValue("scalebar_path", scalebars); saved.setValue("coordinates_path", coordinates); saved.sync()
+    return (scalebars, coordinates, *(tuple(field.value() for field in group) for group in fields))
 
 def read_bars(path, markers):
     rows = []
@@ -55,7 +57,7 @@ def read_bars(path, markers):
             if row[0].lower() == "marker_1_label": continue
             if len(row) != 4: raise ValueError("Scalebar row {} must have four columns.".format(number))
             first, second, distance, accuracy = row; distance, accuracy = float(distance), float(accuracy)
-            if not all(math.isfinite(value) and value > 0 for value in (distance, accuracy)): raise ValueError("Distances and accuracies must be positive finite values in metres.")
+            if not all(math.isfinite(value) and value > 0 for value in (distance, accuracy)): raise ValueError("Distances and accuracies must be positive finite values in meters.")
             if first == second: raise ValueError("A scalebar needs two different targets.")
             if first not in markers or second not in markers: raise ValueError("Missing target in scalebar row {}: {}, {}".format(number, first, second))
             if markers[first].position is None or markers[second].position is None: raise ValueError("Scalebar targets must have reconstructed 3D positions: {}, {}".format(first, second))
